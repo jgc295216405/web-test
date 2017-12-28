@@ -1,0 +1,20 @@
+hello this is test.
+${url}
+<form id="file_upload_id" name="file_upload_name" action="/upload" method="post" enctype="multipart/form-data">
+    <div><input type="file" name="file"/></div>
+    <div><input type="text" name="name" value="jgc"/></div>
+##    <div><input type="submit" value="上传"/></div>
+</form>
+<form id="ha" name="df" action="/post" method="post" >
+    <div><input type="text" name="a" value="123"/></div>
+</form>
+<script type="text/javascript" charset="UTF-8">
+
+    $(function(){
+//          window.location="/redirect"
+        $("#ha").submit();
+    })
+
+</script>
+
+

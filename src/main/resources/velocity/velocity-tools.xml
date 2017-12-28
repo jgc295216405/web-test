@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<toolbox>
+    <!--日期转换工具-->
+    <tool>
+        <key>date</key>
+        <scope>application</scope>
+        <class>org.apache.velocity.tools.generic.DateTool</class>
+        <parameter name="format" value="yyyy-MM-dd"/>
+    </tool>
+    <!--时间转换工具-->
+    <tool>
+        <key>dateTime</key>
+        <scope>application</scope>
+        <class>org.apache.velocity.tools.generic.DateTool</class>
+        <parameter name="format" value="yyyy-MM-dd HH:mm:ss"/>
+    </tool>
+    <!--&lt;!&ndash;I18N消息转换&ndash;&gt;-->
+    <!--<tool>-->
+        <!--<key>msg</key>-->
+        <!--<scope>application</scope>-->
+        <!--<class>com.jd.idn.pay.cashier.common.util.I18NMessageUtil</class>-->
+    <!--</tool>-->
+    <!--&lt;!&ndash; 通用工具类&ndash;&gt;-->
+    <!--<tool>-->
+        <!--<key>commonUtil</key>-->
+        <!--<scope>application</scope>-->
+        <!--<class>com.jd.idn.pay.cashier.common.util.CommonUtil</class>-->
+    <!--</tool>-->
+</toolbox>
