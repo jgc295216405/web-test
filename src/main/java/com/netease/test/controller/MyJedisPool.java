@@ -7,7 +7,7 @@ import java.io.*;
 /**
  * Created by hzjiaoguangcai on 2017/6/21.
  */
-public class JedisPool {
+public class MyJedisPool {
     public interface JedisAction {
         Object action(Jedis jedis);
     }

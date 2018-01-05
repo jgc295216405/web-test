@@ -1,6 +1,7 @@
 package com.netease.test.controller;
 
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.netease.test.commpent.PermissionService;
 import com.netease.test.commpent.TestService;
 
@@ -17,6 +18,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.Assert;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -26,9 +30,12 @@ import org.springframework.web.client.RestTemplate;
 import org.springframework.web.multipart.MultipartFile;
 
 import org.springframework.web.servlet.ModelAndView;
+
+import javax.servlet.ServletException;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -176,12 +183,12 @@ private String url;
 ////        FlowLog flowLog=new FlowLog();
 ////        flowLog.setTimestamp(12);
 ////        flowLog.setFlow(FlowTypeEnum.RENEW);
-////        JedisPool.set("name", flowLog);//向key-->name中放入了value-->xinxin
-////        JedisPool.set("list", list);//向key-->name中放入了value-->xinxin
+////        MyJedisPool.set("name", flowLog);//向key-->name中放入了value-->xinxin
+////        MyJedisPool.set("list", list);//向key-->name中放入了value-->xinxin
 ////
-//////        JedisPool.setExpired("name", 10);
-////        System.out.println(JedisPool.get("name"));//执行结果：xinxin
-////        System.out.println(JedisPool.get("list"));//执行结果：xinxin
+//////        MyJedisPool.setExpired("name", 10);
+////        System.out.println(MyJedisPool.get("name"));//执行结果：xinxin
+////        System.out.println(MyJedisPool.get("list"));//执行结果：xinxin
 //
 ////        jedis.append("name", " is my lover"); //拼接
 ////        System.out.println(jedis.get("name"));
@@ -277,5 +284,16 @@ private String url;
             }
         });
     }
-
+    @GetMapping(value = "/companycert")
+    public void createCompanyCert(HttpServletRequest request,
+                                  HttpServletResponse response) throws IOException, ServletException {
+        request.setAttribute("name","jgc");
+        response.sendRedirect("/companycert1");
+//        request.getRequestDispatcher("/companycert1").forward(request,response);
+        return ;
+    }
+    @GetMapping("/companycert1")
+    public void test(HttpServletRequest request){
+        HttpSession session= request.getSession();
+    }
 }
